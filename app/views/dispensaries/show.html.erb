@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dispensary.name %>
+</p>
+
+<p>
+  <strong>Full address:</strong>
+  <%= @dispensary.full_address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @dispensary.email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @dispensary.phone_number %>
+</p>
+
+<%= link_to 'Edit', edit_dispensary_path(@dispensary) %> |
+<%= link_to 'Back', dispensaries_path %>
