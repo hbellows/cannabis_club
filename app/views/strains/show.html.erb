@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stain:</strong>
+  <%= @strain.stain %>
+</p>
+
+<p>
+  <strong>Cannabinoid abbreviation:</strong>
+  <%= @strain.cannabinoid_abbreviation %>
+</p>
+
+<p>
+  <strong>Cannabinoid:</strong>
+  <%= @strain.cannabinoid %>
+</p>
+
+<p>
+  <strong>Terpene:</strong>
+  <%= @strain.terpene %>
+</p>
+
+<p>
+  <strong>Medical use:</strong>
+  <%= @strain.medical_use %>
+</p>
+
+<p>
+  <strong>Health benefit:</strong>
+  <%= @strain.health_benefit %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @strain.category %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @strain.type %>
+</p>
+
+<%= link_to 'Edit', edit_strain_path(@strain) %> |
+<%= link_to 'Back', strains_path %>
