@@ -9,6 +9,7 @@ class CreateStrains < ActiveRecord::Migration[5.1]
       t.string :health_benefit
       t.string :category
       t.string :type
+      t.string :image
 
       t.timestamps
     end

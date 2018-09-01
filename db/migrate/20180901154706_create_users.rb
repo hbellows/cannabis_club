@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.integer :plant_count
       t.string :user_name
       t.string :password_digest
-      t.integer :role
+      t.integer :role, default: 0
       t.references :dispensary, foreign_key: true
 
       t.timestamps
