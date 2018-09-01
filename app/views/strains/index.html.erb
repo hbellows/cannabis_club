@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Strains</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stain</th>
+      <th>Cannabinoid abbreviation</th>
+      <th>Cannabinoid</th>
+      <th>Terpene</th>
+      <th>Medical use</th>
+      <th>Health benefit</th>
+      <th>Category</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @strains.each do |strain| %>
+      <tr>
+        <td><%= strain.stain %></td>
+        <td><%= strain.cannabinoid_abbreviation %></td>
+        <td><%= strain.cannabinoid %></td>
+        <td><%= strain.terpene %></td>
+        <td><%= strain.medical_use %></td>
+        <td><%= strain.health_benefit %></td>
+        <td><%= strain.category %></td>
+        <td><%= strain.type %></td>
+        <td><%= link_to 'Show', strain %></td>
+        <td><%= link_to 'Edit', edit_strain_path(strain) %></td>
+        <td><%= link_to 'Destroy', strain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Strain', new_strain_path %>
