@@ -11,7 +11,15 @@ describe 'As an unregistered user' do
 
       expect(page).to have_content(dispensary.name)
       expect(page).to have_content(strains[0].strain)
+      expect(page).to have_content(strains[0].cannabinoid_abbreviation)
+      expect(page).to have_content(strains[0].medical_use)
+      expect(page).to have_content(strains[0].health_benefit)
+      # expect(page).to have_content(strains[0].image)
       expect(page).to have_content(strains[-1].strain)
+      expect(page).to have_content(strains[-1].cannabinoid_abbreviation)
+      expect(page).to have_content(strains[-1].medical_use)
+      expect(page).to have_content(strains[-1].health_benefit)
+      # expect(page).to have_content(strains[-1].image)
     end
   end
 end
