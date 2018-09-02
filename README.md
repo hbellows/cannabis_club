@@ -1,3 +1,5 @@
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/hbellows/cannabis_club.svg?columns=all)](https://waffle.io/hbellows/cannabis_club)
+
 # README
 
 This README would normally document whatever steps are necessary to get the
