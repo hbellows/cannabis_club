@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    # @dispensary = Dispensary.find(params[:dispensary_id])
   end
 
   # GET /users/new
