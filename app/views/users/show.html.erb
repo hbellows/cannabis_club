@@ -1,3 +1,6 @@
+<h3>Your Dispensary:</h3>
+<%= @user.dispensary.name %> * <%= @user.dispensary.full_address %> * <%= @user.dispensary.email %> * <%= @user.dispensary.phone_number %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -41,4 +44,4 @@
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', user_path(@user) %>
