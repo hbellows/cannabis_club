@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  validates_presence_of :name, :full_address, :med_card_number, :plant_count, :user_name, :password_digest, :role
+  validates :name, :full_address, :med_card_number, :plant_count, :user_name, :password, :role, presence: true, unless: :admin?
+
+  has_secure_password
 
   belongs_to :dispensary
 

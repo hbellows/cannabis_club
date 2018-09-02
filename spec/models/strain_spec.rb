@@ -9,7 +9,7 @@ RSpec.describe Strain, type: :model do
     it { should validate_presence_of(:medical_use) }
     it { should validate_presence_of(:health_benefit) }
     it { should validate_presence_of(:category) }
-    it { should validate_presence_of(:type) }
+    it { should validate_presence_of(:strain_type) }
     it { should validate_presence_of(:image) }
   end
   describe 'Relationships' do
