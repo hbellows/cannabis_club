@@ -15,9 +15,9 @@ User.destroy_all
 
 dispensary = Dispensary.create(
   name: "Colorado Cannabis Club",
-  full_address: Faker::Address.full_address,
-  email: Faker::Internet.email,
-  phone_number: Faker::PhoneNumber.phone_number
+  full_address: "121 Chronic Lane, D-Town, CO, 80102",
+  email: "ccc@ccc.com",
+  phone_number: "303.030.3030"
   )
 
 20.times do

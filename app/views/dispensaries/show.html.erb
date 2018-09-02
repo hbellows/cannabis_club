@@ -1,5 +1,5 @@
+<div class="header">
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @dispensary.name %>
@@ -19,6 +19,25 @@
   <strong>Phone number:</strong>
   <%= @dispensary.phone_number %>
 </p>
+</div>
 
-<%= link_to 'Edit', edit_dispensary_path(@dispensary) %> |
-<%= link_to 'Back', dispensaries_path %>
+<div class="dispensary-strains">
+  <strong>In Stock:</strong>
+    <% @dispensary.strains.each do |strain| %>
+      <div class="strain">
+        <%= strain.strain %>
+        <%= strain.cannabinoid_abbreviation %>
+        <%= strain.cannabinoid %>
+        <%= strain.terpene %>
+        <%= strain.medical_use %>
+        <%= strain.health_benefit %>
+        <%= strain.category %>
+        <%= strain.strain_type %>
+        <%= strain.image %>
+      </div>
+    <% end %>
+</div>
+
+
+
+<%= link_to 'Back', dispensary_path %>
