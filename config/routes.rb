@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root to: 'dispensaries#show'
+  
   resources :dispensaries, only: [:show]
   resources :strains, only: [:show]
   resources :users, only: [:edit, :update]
