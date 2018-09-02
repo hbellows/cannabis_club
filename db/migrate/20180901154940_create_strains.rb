@@ -1,7 +1,7 @@
 class CreateStrains < ActiveRecord::Migration[5.1]
   def change
     create_table :strains do |t|
-      t.string :stain
+      t.string :strain
       t.string :cannabinoid_abbreviation
       t.string :cannabinoid
       t.string :terpene
