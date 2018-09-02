@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:med_card_number) }
     it { should validate_presence_of(:plant_count) }
     it { should validate_presence_of(:user_name) }
-    it { should validate_presence_of(:password_digest) }
+    it { should validate_presence_of(:password) }
     it { should validate_presence_of(:role) }
   end
   describe 'Relationships' do

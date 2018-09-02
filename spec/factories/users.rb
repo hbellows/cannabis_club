@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :user do
-    name { "MyString" }
-    full_address { "MyString" }
-    med_card_number { 1 }
-    plant_count { 1 }
+    name { Faker::Dune.character }
+    full_address { Faker::Address.full_address }
+    med_card_number { rand(10**10) }
+    plant_count { rand(5..99) }
     user_name { "MyString" }
     password_digest { "MyString" }
-    role { 1 }
+    role { 0 }
     dispensary { nil }
   end
 end
