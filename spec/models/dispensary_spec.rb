@@ -10,6 +10,6 @@ RSpec.describe Dispensary, type: :model do
   describe 'Relationships' do
     it { should have_many(:users) }
     it { should have_many(:dispensary_strains) }
-    it { should have_many(:dispensaries).through(:dispensary_strains) }
+    it { should have_many(:strains).through(:dispensary_strains) }
   end
 end
