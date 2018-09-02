@@ -20,14 +20,10 @@
         <td><%= dispensary.full_address %></td>
         <td><%= dispensary.email %></td>
         <td><%= dispensary.phone_number %></td>
-        <td><%= link_to 'Show', dispensary %></td>
-        <td><%= link_to 'Edit', edit_dispensary_path(dispensary) %></td>
-        <td><%= link_to 'Destroy', dispensary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Must Be 18 Years Old to Enter', dispensary %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Dispensary', new_dispensary_path %>
