@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20180901161422) do
   end
 
   create_table "strains", force: :cascade do |t|
-    t.string "stain"
+    t.string "strain"
     t.string "cannabinoid_abbreviation"
     t.string "cannabinoid"
     t.string "terpene"
