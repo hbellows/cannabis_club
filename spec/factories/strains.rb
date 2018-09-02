@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :strain do
-    stain { Faker::Cannabis.strain }
+    strain { Faker::Cannabis.strain }
     cannabinoid_abbreviation { Faker::Cannabis.cannabinoid_abbreviation }
     cannabinoid { Faker::Cannabis.cannabinoid }
     terpene { Faker::Cannabis.terpene }
