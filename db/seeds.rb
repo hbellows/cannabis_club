@@ -29,7 +29,8 @@ dispensary = Dispensary.create(
   medical_use: Faker::Cannabis.medical_use,
   health_benefit: Faker::Cannabis.health_benefit,
   category: Faker::Cannabis.category,
-  strain_type: Faker::Cannabis.type
+  strain_type: Faker::Cannabis.type,
+  image: 'https://img.sensiseeds.com/en/feminized-seeds/whitelabel/purple-bud-xl.jpg'
   )
 end
 
