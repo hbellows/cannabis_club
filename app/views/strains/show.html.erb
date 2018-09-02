@@ -1,8 +1,9 @@
+<%= link_to 'Back', dispensary_path %>
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Stain:</strong>
-  <%= @strain.stain %>
+  <%= @strain.strain %>
 </p>
 
 <p>
@@ -37,8 +38,11 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @strain.type %>
+  <%= @strain.strain_type %>
 </p>
-
-<%= link_to 'Edit', edit_strain_path(@strain) %> |
-<%= link_to 'Back', strains_path %>
+<p>
+  <strong>Look at me!:</strong>
+  <ul>
+    <%= image_tag("https://img.sensiseeds.com/en/feminized-seeds/whitelabel/purple-bud-xl.jpg", size: '200') %>
+  </ul>
+</p>
