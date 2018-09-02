@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :strain do
-    stain { "MyString" }
-    cannabinoid_abbreviation { "MyString" }
-    cannabinoid { "MyString" }
-    terpene { "MyString" }
-    medical_use { "MyString" }
-    health_benefit { "MyString" }
-    category { "MyString" }
-    type { "" }
+    stain { Faker::Cannabis.strain }
+    cannabinoid_abbreviation { Faker::Cannabis.cannabinoid_abbreviation }
+    cannabinoid { Faker::Cannabis.cannabinoid }
+    terpene { Faker::Cannabis.terpene }
+    medical_use { Faker::Cannabis.medical_use }
+    health_benefit { Faker::Cannabis.health_benefit }
+    category { Faker::Cannabis.category }
+    strain_type { Faker::Cannabis.type }
   end
 end
