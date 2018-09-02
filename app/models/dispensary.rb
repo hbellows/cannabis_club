@@ -1,5 +1,5 @@
 class Dispensary < ApplicationRecord
-  has_many :users
+  has_many :users, dependent: :destroy
   has_many :dispensary_strains
   has_many :strains, through: :dispensary_strains
 
