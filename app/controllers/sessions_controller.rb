@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       redirect_to user_path(@user)
     elsif
       @user
-      flash.notice = "Incorrect Password"
+      flash.notice = "Incorrect Password for #{@user.user_name}"
       redirect_to login_path
     else
       flash.notice = "Username #{params[:user][:user_name]} Not Registered"
