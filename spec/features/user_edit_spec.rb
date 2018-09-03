@@ -14,7 +14,8 @@ describe 'As a registered user' do
 
       fill_in "user[full_address]", with: "New Address, New City, Same State, New Zip"
 
-      click_on("Submit")
+
+      click_on("Update User")
       expect(current_path).to eq(user_path(user))
 
       expect(page).to have_content(dispensary.name)
