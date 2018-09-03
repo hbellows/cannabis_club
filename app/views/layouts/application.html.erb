@@ -9,6 +9,24 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% unless request.env['PATH_INFO'] != '/' %>
+    <% if current_user %>
+        <%= link_to 'My Account', user_path(current_user) %>
+        <%= link_to 'Logout', logout_path, method: 'delete'%>
+      <% end %>
+    <% else %>
+
+        <%= link_to 'Login', login_path %>
+    <% end %>
+
+    <% if current_admin? %>
+      <% unless request.env['PATH_INFO'] == '/admin/dashboard' %>
+        <%= link_to "Admin Dashboard", admin_dashboard_path %>
+      <% end %>
+        <%= link_to "Create New User", new_admin_user_path %>
+        <%= link_to "Create New Strain", new_admin_strain_path %>
+    <% end %>
+
+  <%= yield %>
   </body>
 </html>

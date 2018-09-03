@@ -1,8 +1,11 @@
-<h3><strong>Welcome:</strong> <%= @dispensary.user.user_name %>!</h3>
-<p>
-  <strong>Your Dispensary:</strong>
-  <%= @user.dispensary.name %> * <%= @user.dispensary.full_address %> * <%= @user.dispensary.email %> * <%= @user.dispensary.phone_number %>
-</p>
+<h3><strong>Welcome:</strong> <%= @user.user_name %>!</h3>
+<div class="field">
+  <strong>Your Dispensary:</strong><br />
+  <%= link_to @user.dispensary.name, dispensary_path(@user.dispensary) %><br />
+  <%= @user.dispensary.full_address %><br />
+  <%= @user.dispensary.email %><br />
+  <%= @user.dispensary.phone_number %><br />
+</div>
 
 <p id="notice"><%= notice %></p>
 
@@ -27,4 +30,3 @@
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', dispensary_user_path(@dispensary) %>
