@@ -1,5 +1,4 @@
-<h3><strong>Welcome:</strong> <%= @user.user_name %>!</h3>
-
+<h3><strong>Welcome:</strong> <%= @dispensary.user.user_name %>!</h3>
 <p>
   <strong>Your Dispensary:</strong>
   <%= @user.dispensary.name %> * <%= @user.dispensary.full_address %> * <%= @user.dispensary.email %> * <%= @user.dispensary.phone_number %>
@@ -28,4 +27,4 @@
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', dispensary_path(dispensary) %>
+<%= link_to 'Back', dispensary_user_path(@dispensary) %>

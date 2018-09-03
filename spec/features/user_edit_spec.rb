@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 describe 'As a registered user' do
-  describe 'sees user links to edit page' do
+  describe 'sees link to edit page' do
     it 'allows user to edit their address' do
       dispensary = create(:dispensary)
       user = create(:user, dispensary: dispensary)
       strains = create_list(:strain, 2)
 
-      visit user_path(user)
+      visit user_dispensary_path(user)
       click_on('Edit')
 
       expect(current_path).to eq(edit_user_path(user))
@@ -16,7 +16,7 @@ describe 'As a registered user' do
 
 
       click_on("Update User")
-      expect(current_path).to eq(user_path(user))
+      expect(current_path).to eq(user_dispensary_path(user))
 
       expect(page).to have_content(dispensary.name)
       expect(page).to have_content(user.user_name)
