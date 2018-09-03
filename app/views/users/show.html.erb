@@ -1,5 +1,9 @@
-<h3>Your Dispensary:</h3>
-<%= @user.dispensary.name %> * <%= @user.dispensary.full_address %> * <%= @user.dispensary.email %> * <%= @user.dispensary.phone_number %>
+<h3><strong>Welcome:</strong> <%= @user.user_name %>!</h3>
+
+<p>
+  <strong>Your Dispensary:</strong>
+  <%= @user.dispensary.name %> * <%= @user.dispensary.full_address %> * <%= @user.dispensary.email %> * <%= @user.dispensary.phone_number %>
+</p>
 
 <p id="notice"><%= notice %></p>
 
@@ -9,38 +13,18 @@
 </p>
 
 <p>
-  <strong>Full address:</strong>
+  <strong>Your Address:</strong>
   <%= @user.full_address %>
 </p>
 
 <p>
-  <strong>Med card number:</strong>
+  <strong>Current Medical Card Number:</strong>
   <%= @user.med_card_number %>
 </p>
 
 <p>
   <strong>Plant count:</strong>
   <%= @user.plant_count %>
-</p>
-
-<p>
-  <strong>User name:</strong>
-  <%= @user.user_name %>
-</p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
-</p>
-
-<p>
-  <strong>Dispensary:</strong>
-  <%= @user.dispensary %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
