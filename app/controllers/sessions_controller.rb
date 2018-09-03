@@ -6,7 +6,10 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(user_name: params[:user][:user_name])
-    if @user && @user.authenticate(params[:user][:password])
+    if @user.admin?
+      session[:user_id] = @user.id
+      redirect_to admin_dashboard_path
+    elsif @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       flash.notice = "Logged in as #{@user.user_name}"
       redirect_to user_path(@user)
