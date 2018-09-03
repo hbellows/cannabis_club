@@ -1,0 +1,16 @@
+<div class="admin-dashboard-strains">
+  <strong>Strains:</strong>
+  <ul>
+    <% @strains.each do |strain| %>
+      <div class="strain col-md-3">
+        <%= image_tag("https://img.sensiseeds.com/en/feminized-seeds/whitelabel/purple-bud-xl.jpg", size: '200') %><br />
+        Strain: <%= link_to strain.strain, strain_path(strain) %><br />
+        Cannabinoid: <%= strain.cannabinoid_abbreviation %><br />
+        Medical Use: <%= strain.medical_use %><br />
+        Health Benefit: <%= strain.health_benefit %><br />
+        <%= link_to 'Edit', edit_admin_strain_path %>
+        <%= link_to 'Delete', admin_strain(strain), method: 'delete' %>
+      </div>
+    <% end %>
+  </ul>
+</div>

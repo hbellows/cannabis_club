@@ -7,11 +7,13 @@ Rails.application.routes.draw do
     resources :strains
   end
 
-  resources :users, only: [:show] do
-    resources :dispensaries, only: [:show]
-  end
-
   resources :dispensaries, only: [:index, :show]
   resources :strains, only: [:show]
   resources :users, only: [:show, :edit, :update]
+
+  get "/login"     => "sessions#new"
+  post "/login"    => "sessions#create"
+  delete "/logout" => "sessions#destroy"
+
+  get 'admin/dashboard' => 'admin/base#dashboard'
 end

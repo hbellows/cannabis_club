@@ -7,16 +7,15 @@ describe 'As a registered user' do
       user = create(:user, dispensary: dispensary)
       strains = create_list(:strain, 2)
 
-      visit user_dispensary_path(user)
+      visit user_path(user)
       click_on('Edit')
 
       expect(current_path).to eq(edit_user_path(user))
 
       fill_in "user[full_address]", with: "New Address, New City, Same State, New Zip"
 
-
       click_on("Update User")
-      expect(current_path).to eq(user_dispensary_path(user))
+      expect(current_path).to eq(user_path(user))
 
       expect(page).to have_content(dispensary.name)
       expect(page).to have_content(user.user_name)

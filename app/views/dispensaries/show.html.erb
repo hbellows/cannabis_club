@@ -27,12 +27,12 @@
   <strong>In Stock:</strong>
   <ul>
     <% @dispensary.strains.each do |strain| %>
-      <div class="strain">
-        <%= image_tag("https://img.sensiseeds.com/en/feminized-seeds/whitelabel/purple-bud-xl.jpg", size: '200') %>
-        <li>Name: <%= link_to strain.strain, strain_path(strain) %></li>
-        <li>Cannabinoid: <%= strain.cannabinoid_abbreviation %></li>
-        <li>Medical Use: <%= strain.medical_use %></li>
-        <li>Health Benefit: <%= strain.health_benefit %></li>
+      <div class="strain col-md-3">
+        <%= image_tag("https://img.sensiseeds.com/en/feminized-seeds/whitelabel/purple-bud-xl.jpg", size: '200') %><br />
+        Strain: <%= link_to strain.strain, strain_path(strain) %><br />
+        Cannabinoid: <%= strain.cannabinoid_abbreviation %><br />
+        Medical Use: <%= strain.medical_use %><br />
+        Health Benefit: <%= strain.health_benefit %><br />
       </div>
     <% end %>
   </ul>
