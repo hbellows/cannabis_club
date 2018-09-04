@@ -31,6 +31,7 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'database_cleaner'
 gem 'carrierwave', '~> 1.0'
+gem 'faker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -46,7 +47,6 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 4.0'
   gem 'pry'
   gem 'simplecov', require: false, group: :test
-  gem 'faker'
 end
 
 group :development do
