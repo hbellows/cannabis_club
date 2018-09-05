@@ -10,7 +10,7 @@ describe 'Admin show page' do
     visit admin_dashboard_path
 
     expect(page).to have_content("Strains")
-    expect(page).to have_content("Users")
+    expect(page).to have_content("Patients")
   end
   it 'can create a new user' do
     dispensary = create(:dispensary)
@@ -30,12 +30,13 @@ describe 'Admin show page' do
     click_on "Create New Patient"
 
     expect(current_path).to eq(admin_users_path)
-
+    within(".patients") do
     expect(page).to have_content("New User")
     expect(page).to have_content("New User Address")
-    expect(page).to have_content("Med Card #{User.last.med_card_number}")
-    expect(page).to have_content("Plant Count #{User.last.plant_count}")
+    expect(page).to have_content("Med Card: #{User.last.med_card_number}")
+    expect(page).to have_content("Plant Count: #{User.last.plant_count}")
     expect(page).to have_content("New User Name")
-    expect(page).to have_content("New User Password")
+    expect(page).to have_content("user")
+    end
   end
 end
