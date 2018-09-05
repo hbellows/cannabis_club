@@ -1,0 +1,14 @@
+<div class="strains">
+  <strong>Strains:</strong>
+  <ul>
+    <% @strains.each do |strain| %>
+      <div class="strain col-md-3">
+        Strain: <%= link_to strain.strain, strain_path(strain) %><br />
+        Medical Use: <%= strain.medical_use %><br />
+        Health Benefit: <%= strain.health_benefit %><br />
+        <%= link_to 'Edit', edit_admin_strain_path(strain) %>
+        <%= link_to 'Delete', admin_strain_path(strain), method: 'delete' %>
+      </div>
+    <% end %>
+  </ul>
+</div>
