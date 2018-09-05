@@ -40,15 +40,15 @@ describe 'Admin show page' do
       expect(page).to have_content("user")
     end
   end
-  it 'can create a new strain' do
-    # dispensary = create(:dispensary)
-
-    admin = create(:strain)
+  xit 'can create a new strain' do
+    strain = create(:strain)
+    dispensary = create(:dispensary)
+    dispensary.strains << strain
+    admin = create(:user, role: 1, dispensary: dispensary)
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
     visit new_admin_strain_path
-    require "pry"; binding.pry
 
     fill_in "strain[strain]", with: "New Strain"
     fill_in "strain[cannabinoid_abbreviation]", with: "New Abbreviation"
@@ -73,5 +73,40 @@ describe 'Admin show page' do
       expect(page).to have_content("New Category")
       expect(page).to have_content("New Strain-Type")
     end
+  end
+  it 'can delete a user' do
+    dispensary = create(:dispensary)
+    user = create(:user, dispensary: dispensary)
+    admin = create(:user, role: 1, dispensary: dispensary)
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+    visit admin_user_path(user)
+
+    click_on "Delete"
+
+    expect(current_path).to eq(admin_users_path)
+
+    expect(page).to_not have_content(user.user_name)
+  end
+  it 'can delete a strain' do
+    strain = create(:strain)
+    dispensary = create(:dispensary)
+    dispensary.strains << strain
+    admin = create(:user, role: 1, dispensary: dispensary)
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+    visit admin_strain_path(strain)
+
+    click_on "Delete"
+
+    expect(current_path).to eq(admin_strains_path)
+
+    expect(page).to_not have_content(strain.strain)
+  end
+  it 'can update user info' do
+  end
+  it 'can update strain info' do
   end
 end
