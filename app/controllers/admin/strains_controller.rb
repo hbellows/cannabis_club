@@ -14,7 +14,6 @@ class Admin::StrainsController < Admin::BaseController
 
   def create
     @strain = Strain.create(strain_params)
-    require "pry"; binding.pry
     if @strain.save
       flash[:notice] = "#{@strain.strain} added!"
       redirect_to admin_strains_path
