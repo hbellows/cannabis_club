@@ -14,8 +14,9 @@ describe "log out" do
     click_on("Login")
 
     # expect(current_path).to eq(user_path(user))
-
-    click_on("Log out")
+    within(body) do
+      click_on("Logout")
+    end
 
     expect(current_path).to eq(root_path)
 

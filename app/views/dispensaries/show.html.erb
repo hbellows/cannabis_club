@@ -1,38 +1,25 @@
 
+<p id="notice"><%= notice %></p>
 
 <div class="header">
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Name:</strong>
-  <%= @dispensary.name %>
-</p>
-
-<p>
-  <strong>Full address:</strong>
-  <%= @dispensary.full_address %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @dispensary.email %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @dispensary.phone_number %>
-</p>
+  <strong><%= @dispensary.name %></strong>
+  <strong><%= @dispensary.full_address %></strong>
+  <strong><%= @dispensary.email %></strong>
+  <strong><%= @dispensary.phone_number %></strong>
 </div>
 
 <div class="dispensary-strains">
   <strong>In Stock:</strong>
   <ul>
     <% @dispensary.strains.each do |strain| %>
-      <div class="strain col-md-3">
-        <%= image_tag("https://img.sensiseeds.com/en/feminized-seeds/whitelabel/purple-bud-xl.jpg", size: '200') %><br />
-        Strain: <%= link_to strain.strain, strain_path(strain) %><br />
-        Cannabinoid: <%= strain.cannabinoid_abbreviation %><br />
-        Medical Use: <%= strain.medical_use %><br />
-        Health Benefit: <%= strain.health_benefit %><br />
+      <div class="container-fluid col-sm-4">
+        <div class="row">
+          <%= image_tag("https://img.sensiseeds.com/en/feminized-seeds/whitelabel/purple-bud-xl.jpg", size: '200') %><br />
+          Strain: <%= link_to strain.strain, strain_path(strain) %><br />
+          Cannabinoid: <%= strain.cannabinoid_abbreviation %><br />
+          Medical Use: <%= strain.medical_use %><br />
+          Health Benefit: <%= strain.health_benefit %><br />
+        </div>
       </div>
     <% end %>
   </ul>

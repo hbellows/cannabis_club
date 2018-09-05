@@ -17,14 +17,15 @@
  body {
   font-family: 'Sawarabi Gothic', sans-serif;
   font-size: 18px;
+  flex-direction: column;
   background-image: image-url('tie-dye.jpg');
-  background-size: 200px;
+  background-size: 1500px;
 }
 
 nav {
-  padding: 1px;
+  padding: 100px;
   margin: 0;
-  background-color: #F29301;
+  background-color: none;
   text-align: center;
   font-weight: 500;
   font-size: 1.25em;
@@ -35,7 +36,7 @@ nav ul {
   margin: auto;
   width: 100%;
   padding: 7px;
-  background-color: #F29301;
+  background-color: none;
 }
 
 nav li {
@@ -44,7 +45,7 @@ nav li {
 }
 
 nav li:hover {
-  background-color: #772128;
+  background-color: none;
 }
 
 nav a {
@@ -54,12 +55,17 @@ nav a {
 
 nav a:hover {
   text-decoration: none;
-  color: #fff;
+  color: #000000;
 }
 
 nav li:active {
   text-decoration: none;
   background-color: #772128;
+}
+
+dispensary-strains {
+  
+
 }
 
  th {
