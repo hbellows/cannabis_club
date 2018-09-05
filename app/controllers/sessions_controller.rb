@@ -6,20 +6,22 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(user_name: params[:user][:user_name])
-    if @user.admin?
+    if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-      redirect_to admin_dashboard_path
-    elsif @user && @user.authenticate(params[:user][:password])
-      session[:user_id] = @user.id
-      flash.notice = "Logged in as #{@user.user_name}"
+      flash.now[:notice] = "Logged in as #{@user.user_name}"
       redirect_to user_path(@user)
     elsif
       @user
-      flash.notice = "Incorrect Password for #{@user.user_name}"
+      flash.now[:danger] = "Incorrect Password for #{@user.user_name}"
+      redirect_to login_path
+    elseif
+      flash.now[:danger] = "Username #{params[:user][:user_name]} Not Registered"
       redirect_to login_path
     else
-      flash.notice = "Username #{params[:user][:user_name]} Not Registered"
-      redirect_to login_path
+      if @user.admin?
+        session[:user_id] = @user.id
+        redirect_to admin_dashboard_path
+      end
     end
   end
 

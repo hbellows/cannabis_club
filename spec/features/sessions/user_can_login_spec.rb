@@ -19,7 +19,7 @@ describe "login" do
     click_on("Log In")
 
     expect(current_path).to eq(user_path(user))
-    expect(page).to have_content("Logged in as #{user.user_name}")
+    expect(page).to have_content("Welcome #{user.user_name}!")
 
     expect(page).to_not have_content("Login")
     expect(page).to have_content("Logout")
@@ -43,8 +43,8 @@ describe "login" do
 
     expect(current_path).to eq(login_path)
     #
-    # expect(page).to have_content("Incorrect Password for #{user.user_name}")
-    # expect(page).to_not have_content("Logged in as #{user.user_name}")
+    expect(page).to have_content('Invalid email/password combination')
+    expect(page).to_not have_content("Logged in as #{user.user_name}")
   end
   it "prohibits login with incorrect username" do
     dispensary = create(:dispensary)
@@ -64,6 +64,6 @@ describe "login" do
     click_on("Login")
 
     expect(current_path).to eq(login_path)
-    # expect(page).to have_content("Username Jo Shmo Not Registered")
+    expect(page).to have_content("Username Jo Shmo Not Registered")
   end
 end

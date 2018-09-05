@@ -1,4 +1,4 @@
-class Admin::StrainsController < ApplicationController
+class Admin::StrainsController < Admin::BaseController
 
   def index
     @strains = Strain.all

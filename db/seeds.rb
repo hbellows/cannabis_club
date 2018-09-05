@@ -44,3 +44,22 @@ end
   password: Faker::Internet.password
   )
 end
+
+dispensary.users.create(
+  name: "Registered User",
+  full_address: "Denver",
+  med_card_number: 1,
+  plant_count: 25,
+  user_name: "User",
+  password: "User"
+)
+
+dispensary.users.create(
+  name: "Admin User",
+  full_address: "Basement",
+  med_card_number: 0,
+  plant_count: 0,
+  user_name: "Admin",
+  password: "Admin",
+  role: 1
+)
