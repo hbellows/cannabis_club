@@ -9,5 +9,6 @@ FactoryBot.define do
     category { Faker::Cannabis.category }
     strain_type { Faker::Cannabis.type }
     image { 'https://img.sensiseeds.com/en/feminized-seeds/whitelabel/purple-bud-xl.jpg' }
+    # dispensary_strain { nil }
   end
 end
