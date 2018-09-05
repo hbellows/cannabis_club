@@ -1,13 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <%= link_to 'New Strain', new_admin_strain_path %>
+</div>
+
 <div class="strains">
   <strong>Strains:</strong>
   <ul>
     <% @strains.each do |strain| %>
-      <div class="strain col-md-3">
+      <div class="container col-sm-4">
         Strain: <%= link_to strain.strain, strain_path(strain) %><br />
+        CBV: <%= strain.cannabinoid_abbreviation %><br />
+        Cannabinoid: <%= strain.cannabinoid %><br />
+        Terpene: <%= strain.terpene %><br />
         Medical Use: <%= strain.medical_use %><br />
         Health Benefit: <%= strain.health_benefit %><br />
+        Category: <%= strain.category %><br />
+        Strain-Type: <%= strain.strain_type %><br />
         <%= link_to 'Edit', edit_admin_strain_path(strain) %>
-        <%= link_to 'Delete', admin_strain_path(strain), method: 'delete' %>
+        <%= link_to 'Delete', admin_strain_path(strain), method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
   </ul>

@@ -18,10 +18,9 @@ class SessionsController < ApplicationController
       flash[:notice] = "Username #{params[:user][:user_name]} Not Registered"
       redirect_to login_path
     else
-      if @user.admin?
-        session[:user_id] = @user.id
-        redirect_to admin_dashboard_path
-      end
+      @user.admin?
+      session[:user_id] = @user.id
+      redirect_to admin_dashboard_path
     end
   end
 

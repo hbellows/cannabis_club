@@ -1,10 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container">
+  <%= link_to 'New User', new_admin_user_path %>
+</div>
+
 <div class="patients">
   <strong>Patients:</strong>
   <ul>
     <% @users.each do |user| %>
-    <div class="strain col-md-3">
+    <div class="container col-sm-4">
       Name: <%= link_to user.name, user_path(user) %><br />
       Address: <%= user.full_address %><br />
       Med Card: <%= user.med_card_number %><br />
@@ -18,5 +22,3 @@
     <% end %>
   </ul>
 </div>
-
-<%= link_to 'New User', new_admin_user_path %>

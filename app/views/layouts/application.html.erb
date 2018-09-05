@@ -35,8 +35,6 @@
           <% unless request.env['PATH_INFO'] == '/admin/dashboard' %>
             <li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
           <% end %>
-            <li><%= link_to "Create New User", new_admin_user_path %></li>
-            <li><%= link_to "Create New Strain", new_admin_strain_path %></li>
         <% end %>
       <% end %>
       </ul>
