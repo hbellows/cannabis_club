@@ -1,5 +1,43 @@
 <h1>New Strain</h1>
 
-<%= render 'form', strain: @strain %>
+<%= form_for [:admin, @strain] do |form| %>
 
-<%= link_to 'Back', strains_path %>
+  <div class="field">
+    <%= form.label :strain %>
+    <%= form.text_field :strain %>
+  </div>
+  <div class="field">
+    <%= form.label :cannabinoid_abbreviation %>
+    <%= form.text_field :cannabinoid_abbreviation %>
+  </div>
+  <div class="field">
+    <%= form.label :cannabinoid %>
+    <%= form.text_field :cannabinoid %>
+  </div>
+  <div class="field">
+    <%= form.label :terpene %>
+    <%= form.text_field :terpene %>
+  </div>
+  <div class="field">
+    <%= form.label :medical_use %>
+    <%= form.text_field :medical_use %>
+  </div>
+  <div class="field">
+    <%= form.label :health_benefit %>
+    <%= form.text_field :health_benefit %>
+  </div>
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+  <div class="field">
+    <%= form.label :strain_type %>
+    <%= form.text_field :strain_type %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Create New Strain"%>
+  </div>
+<% end %>
+
+<%= link_to 'Back', admin_strains_path %>

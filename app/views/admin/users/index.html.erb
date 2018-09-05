@@ -1,41 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<div class="container">
+  <%= link_to 'New User', new_admin_user_path %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Full address</th>
-      <th>Med card number</th>
-      <th>Plant count</th>
-      <th>User name</th>
-      <th>Password digest</th>
-      <th>Role</th>
-      <th>Dispensary</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="patients">
+  <strong>Patients:</strong>
+  <ul>
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.full_address %></td>
-        <td><%= user.med_card_number %></td>
-        <td><%= user.plant_count %></td>
-        <td><%= user.user_name %></td>
-        <td><%= user.password_digest %></td>
-        <td><%= user.role %></td>
-        <td><%= user.dispensary %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="container col-sm-4">
+      Name: <%= link_to user.name, user_path(user) %><br />
+      Address: <%= user.full_address %><br />
+      Med Card: <%= user.med_card_number %><br />
+      Plant Count: <%= user.plant_count %><br />
+      User Name: <%= user.user_name %><br />
+      Role: <%= user.role %><br />
+      Dispensary: <%= user.dispensary.name %><br />
+      <%= link_to 'Edit', edit_admin_user_path(user) %>
+      <%= link_to 'Delete', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' }%>
+    </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+  </ul>
+</div>

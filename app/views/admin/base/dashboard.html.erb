@@ -1,30 +1,4 @@
 <div class="admin-dashboard-strains">
-<div class="strains">
-  <strong>Strains:</strong>
-  <ul>
-    <% @strains.each do |strain| %>
-      <div class="strain col-md-3">
-        Strain: <%= link_to strain.strain, strain_path(strain) %><br />
-        Medical Use: <%= strain.medical_use %><br />
-        Health Benefit: <%= strain.health_benefit %><br />
-        <%= link_to 'Edit', edit_admin_strain_path(strain) %>
-        <%= link_to 'Delete', admin_strain_path(strain), method: 'delete' %>
-      </div>
-    <% end %>
-  </ul>
-</div>
-<div class="users">
-  <strong>Users:</strong>
-  <ul>
-    <% @users.each do |user| %>
-    <div class="strain col-md-3">
-      Name: <%= link_to user.name, user_path(user) %><br />
-      Med Card Number: <%= user.med_card_number %><br />
-      <%= link_to 'Edit', edit_admin_user_path(user) %>
-      <%= link_to 'Delete', admin_user_path(user), method: 'delete' %>
-    </div>
-    <% end %>
-  </ul>
-
-</div>
+  <strong><%= link_to "Patients", admin_users_path %> </strong>
+  <strong><%= link_to "Strains", admin_strains_path %> </strong>
 </div>

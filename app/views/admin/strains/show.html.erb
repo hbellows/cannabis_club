@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="container col-sm-4">
+    <strong>Strain:</strong><%= @strain.strain %>
+    <strong>CBV:</strong><%= @strain.cannabinoid_abbreviation %>
+    <strong>Cannabinoid:</strong><%= @strain.med_card_number %>
+    <strong>Plant Count:</strong><%= @strain.plant_count %>
+    <strong>Medical Use:</strong><%= @strain.medical_use %>
+    <strong>Health Benefit:</strong><%= @strain.health_benefit %>
+    <strong>Category:</strong><%= @strain.category %>
+    <strong>Strain-Type:</strong><%= @strain.strain_type %>
+</div>
+
+<%= link_to 'Edit', edit_admin_strain_path(@strain) %> |
+<%= link_to 'Back', admin_dashboard_path %>

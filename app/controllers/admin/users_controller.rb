@@ -14,8 +14,9 @@ class Admin::UsersController < Admin::BaseController
 
   def create
     @user = User.create(user_params)
+    @user.dispensary = current_user.dispensary
     if @user.save
-      flash.notice "#{@user.name} added!"
+      flash[:notice] = "#{@user.name} added!"
       redirect_to admin_users_path
     else
       render :new
@@ -40,4 +41,11 @@ class Admin::UsersController < Admin::BaseController
 
     redirect_to admin_users_path
   end
+
+  private
+
+    def user_params
+      params.require(:user).permit(:name, :full_address, :med_card_number,
+        :plant_count, :user_name, :password, :role)
+    end
 end

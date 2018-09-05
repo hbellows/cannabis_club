@@ -14,8 +14,9 @@ class Admin::StrainsController < Admin::BaseController
 
   def create
     @strain = Strain.create(strain_params)
+    require "pry"; binding.pry
     if @strain.save
-      flash.notice "#{@strain.strain} added!"
+      flash[:notice] = "#{@strain.strain} added!"
       redirect_to admin_strains_path
     else
       render :new
@@ -40,4 +41,13 @@ class Admin::StrainsController < Admin::BaseController
 
     redirect_to admin_strains_path
   end
+
+
+  private
+
+    def strain_params
+      params.require(:strain).permit(:strain, :cannabinoid_abbreviation,
+        :cannabinoid, :terpene, :medical_use, :health_benefit,
+        :category, :strain_type)
+    end
 end
