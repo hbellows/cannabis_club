@@ -1,4 +1,4 @@
-<%= link_to 'Back', dispensaries_path %>
+
 
 <div class="header">
 <p id="notice"><%= notice %></p>
@@ -27,7 +27,7 @@
   <strong>In Stock:</strong>
   <ul>
     <% @dispensary.strains.each do |strain| %>
-      <div class="strain col-md-4">
+      <div class="strain col-md-3">
         <%= image_tag("https://img.sensiseeds.com/en/feminized-seeds/whitelabel/purple-bud-xl.jpg", size: '200') %><br />
         Strain: <%= link_to strain.strain, strain_path(strain) %><br />
         Cannabinoid: <%= strain.cannabinoid_abbreviation %><br />
