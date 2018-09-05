@@ -1,22 +1,24 @@
 require 'rails_helper'
 
-RSpec.feature "user can log out" do
-  xscenario "after logging in" do
+describe "log out" do
+  it "allows a user to log out" do
     dispensary = create(:dispensary)
     user = create(:user, user_name: "User", password: "Password", dispensary: dispensary)
 
-    visit dispensary_path(dispensary)
+    visit login_path
 
     click_on("Login")
     fill_in "user[user_name]", with: user.user_name
-    fill_in "user[password]", with: "Password"
-    click_on("Log In")
+    fill_in "user[password]", with: user.password
 
-    # within(:css, "#nav-mobile") do
-    click_on("Logout")
-    # end
+    click_on("Login")
+
+    # expect(current_path).to eq(user_path(user))
+
+    click_on("Log out")
 
     expect(current_path).to eq(root_path)
+
     expect(page).to have_content("Login")
     expect(page).to_not have_content("Logout")
   end
