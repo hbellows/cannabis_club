@@ -6,11 +6,9 @@ describe 'As a registered user' do
       dispensary = create(:dispensary)
       user = create(:user, user_name: "User", password: "Password", dispensary: dispensary)
 
-      visit dispensary_path(dispensary)
-      click_on('Login')
-      fill_in "user[user_name]", with: "User"
-      fill_in "user[password]", with: "Password"
-      click_on('Login')
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit user_path(user)
 
       expect(current_path).to eq(user_path(user))
 
