@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xdescribe "log out" do
+describe "log out" do
   it "allows a user to log out" do
     dispensary = create(:dispensary)
     user = create(:user, user_name: "User", password: "Password", dispensary: dispensary)
@@ -13,10 +13,12 @@ xdescribe "log out" do
 
     click_on("Login")
 
-    # expect(current_path).to eq(user_path(user))
-    within(".nav navbar-nav") do
-      click_on("Logout")
+    within("p#notice") do
+    expect(page).to have_content("Logged in as #{user.user_name}")
     end
+
+
+    click_on("Logout")
 
     expect(current_path).to eq(root_path)
 
