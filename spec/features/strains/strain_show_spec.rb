@@ -20,7 +20,6 @@ describe 'As an unregistered user' do
       expect(page).to have_content(strains[0].health_benefit)
       expect(page).to have_content(strains[0].category)
       expect(page).to have_content(strains[0].strain_type)
-      # expect(page).to have_content(strains[0].image)
     end
   end
 end

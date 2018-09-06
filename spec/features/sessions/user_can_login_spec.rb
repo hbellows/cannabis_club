@@ -43,9 +43,10 @@ describe "login" do
 
     expect(current_path).to eq(login_path)
 
-
-      # expect(page).to have_content("Incorrect Password for #{user.user_name}")
-      # expect(page).to_not have_content("Logged in as #{user.user_name}")
+    # expect(flash[:alert]).to be_present
+    # expect(controller).to set_flash
+    # expect(page).to have_content("Incorrect Password for #{user.user_name}")
+    # expect(page).to_not have_content("Logged in as #{user.user_name}")
   end
   it "prohibits login with incorrect username" do
     dispensary = create(:dispensary)
