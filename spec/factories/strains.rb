@@ -8,7 +8,6 @@ FactoryBot.define do
     health_benefit { Faker::Cannabis.health_benefit }
     category { Faker::Cannabis.category }
     strain_type { Faker::Cannabis.type }
-    image { 'https://img.sensiseeds.com/en/feminized-seeds/whitelabel/purple-bud-xl.jpg' }
-    # dispensary_strain { nil }
+    image { 'generic.jpg' }
   end
 end

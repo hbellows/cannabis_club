@@ -27,6 +27,7 @@ class Admin::StrainsController < Admin::BaseController
   end
 
   def update
+    @strain = Strain.find(params[:id])
     if @strain.update(strain_params)
       redirect_to admin_strain_path(@strain)
       flash.notice = "#{@strain.strain} updated!"
