@@ -106,7 +106,45 @@ describe 'Admin show page' do
     expect(page).to_not have_content(strain.strain)
   end
   it 'can update user info' do
+    dispensary = create(:dispensary)
+    user = create(:user, dispensary: dispensary)
+    admin = create(:user, role: 1, dispensary: dispensary)
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+    visit edit_admin_user_path(user)
+
+    fill_in "user[med_card_number]", with: 12345
+    fill_in "user[plant_count]", with: 12
+
+    click_on "Update Patient Info"
+
+    expect(current_path).to eq(admin_user_path(user))
+    # require "pry"; binding.pry
+    # save_and_open_page
+    within(".container") do
+    expect(page).to have_content("Med Card: 12345")
+    expect(page).to have_content("Plant Count: 12")
+    end
   end
   it 'can update strain info' do
+    strain = create(:strain)
+    dispensary = create(:dispensary)
+    dispensary.strains << strain
+    admin = create(:user, role: 1, dispensary: dispensary)
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+    visit edit_admin_strain_path(strain)
+
+    fill_in "strain[medical_use]", with: "New Medical Use"
+    fill_in "strain[health_benefit]", with: "New Health Benefit"
+
+    click_on "Update Strain"
+
+    expect(current_path).to eq(admin_strain_path(strain))
+
+    expect(page).to have_content("New Medical Use")
+    expect(page).to have_content("New Health Benefit")
   end
 end

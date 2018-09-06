@@ -1,0 +1,36 @@
+<h1>Edit Patient</h1>
+
+<%= form_for [:admin, @user] do |form| %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= form.label :full_address %>
+    <%= form.text_area :full_address %>
+  </div>
+  <div class="field">
+    <%= form.label :med_card_number %>
+    <%= form.number_field :med_card_number %>
+  </div>
+  <div class="field">
+    <%= form.label :plant_count %>
+    <%= form.number_field :plant_count %>
+  </div>
+  <div class="field">
+    <%= form.label :user_name %>
+    <%= form.text_field :user_name %>
+  </div>
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Update Patient Info"%>
+  </div>
+<% end %>
+
+
+<%= link_to 'Back', admin_users_path %>

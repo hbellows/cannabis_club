@@ -28,6 +28,7 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def update
+    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to admin_user_path(@user)
       flash.notice = "#{@user.name} updated!"
