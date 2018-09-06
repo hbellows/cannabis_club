@@ -120,11 +120,10 @@ describe 'Admin show page' do
     click_on "Update Patient Info"
 
     expect(current_path).to eq(admin_user_path(user))
-    # require "pry"; binding.pry
-    # save_and_open_page
-    within(".container") do
-    expect(page).to have_content("Med Card: 12345")
-    expect(page).to have_content("Plant Count: 12")
+
+    within(".container-patient") do
+      expect(page).to have_content("Med Card: 12345")
+      expect(page).to have_content("Plant Count: 12")
     end
   end
   it 'can update strain info' do
