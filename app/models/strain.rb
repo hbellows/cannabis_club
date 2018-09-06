@@ -4,6 +4,6 @@ class Strain < ApplicationRecord
 
   validates_presence_of :strain, :cannabinoid_abbreviation, :cannabinoid
   validates_presence_of :terpene, :medical_use, :health_benefit, :category
-  validates_presence_of :strain_type, :image
+  validates_presence_of :strain_type
 
 end
