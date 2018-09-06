@@ -1,4 +1,50 @@
-<div class="admin-dashboard-strains">
+<div class="container">
   <strong><%= link_to "Patients", admin_users_path %> </strong>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Med Card</th>
+        <th>Plant Count</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+         <td><%= link_to user.name, admin_user_path(user) %></td>
+         <td><%= user.med_card_number %></td>
+         <td><%= user.plant_count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="container">
   <strong><%= link_to "Strains", admin_strains_path %> </strong>
+  <table>
+    <thead>
+      <tr>
+        <th>Strain</th>
+        <th>Cannabinoid</th>
+        <th>Strain-Type</th>
+        <th>Category</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @strains.each do |strain| %>
+      <tr>
+        <td><%= strain.strain %></td>
+        <td><%= strain.cannabinoid %></td>
+        <td><%= strain.strain_type %></td>
+        <td><%= strain.category %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
