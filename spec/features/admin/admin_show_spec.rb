@@ -40,7 +40,7 @@ describe 'Admin show page' do
       expect(page).to have_content("user")
     end
   end
-  xit 'can create a new strain' do
+  it 'can create a new strain' do
     strain = create(:strain)
     dispensary = create(:dispensary)
     dispensary.strains << strain

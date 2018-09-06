@@ -13,7 +13,6 @@ class Admin::StrainsController < Admin::BaseController
   end
 
   def create
-    require "pry"; binding.pry
     @strain = Strain.create(strain_params)
     if @strain.save
       flash[:notice] = "#{@strain.strain} added!"
